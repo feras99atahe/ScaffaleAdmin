@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "397023886730",
+    "project_id": "scaffale-eeae4",
+    "storage_bucket": "scaffale-eeae4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:397023886730:android:6af459506a70a0b0815c73",
+        "android_client_info": {
+          "package_name": "com.mycompany.scaffale"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "397023886730-f40a1cjn1fu9iif5vvcr605837tgo6nr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.scaffale",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "397023886730-7g4nl27060onuaat6ag3ocdj3trnv6gg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSBVsWArr7Lq4l_KykUb5eI5J7sluC47w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "397023886730-7g4nl27060onuaat6ag3ocdj3trnv6gg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "397023886730-vtbmg13j0hs5r8t9uksvvml94jv936di.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.scaffale"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
