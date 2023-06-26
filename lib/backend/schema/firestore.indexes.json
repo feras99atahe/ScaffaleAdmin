@@ -1,0 +1,18 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "Data",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "bookstatus",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "created",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ]
+}
