@@ -408,10 +408,13 @@ class DataRecordBuilder implements Builder<DataRecord, DataRecordBuilder> {
 
   DateTime? _created;
   DateTime? get created => _$this._created;
+  set created(DateTime? created) => _$this._created = created;
+
 
   DateTime? _publicationData;
   DateTime? get publicationData => _$this._publicationData;
-  
+  set publicationData(DateTime? publicationData) => _$this._publicationData = publicationData;
+
   String? _publisher;
   String? get publisher => _$this._publisher;
   set publisher(String? publisher) => _$this._publisher = publisher;

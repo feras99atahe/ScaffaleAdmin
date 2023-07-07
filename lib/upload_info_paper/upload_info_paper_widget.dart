@@ -727,48 +727,34 @@ class _UploadInfoPaperWidgetState extends State<UploadInfoPaperWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(16, 8, 16, 8),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          final selectedFiles = await selectFiles(
-                            multiFile: false,
-                          );
-                          if (selectedFiles != null) {
+                          final selectedFile = await selectFile();
+                          if (selectedFile != null) {
                             setState(() => _model.isDataUploading = true);
-                            var selectedUploadedFiles = <FFUploadedFile>[];
-
-                            List downloadUrls = <String>[];
+                            FFUploadedFile? selectedUploadedFile;
+                            String? downloadUrl;
                             try {
                               showUploadMessage(
                                 context,
                                 'Uploading file...',
                                 showLoading: true,
                               );
-                              selectedUploadedFiles = selectedFiles
-                                  .map((m) => FFUploadedFile(
-                                name: m.storagePath.split('/').last,
-                                bytes: m.bytes,
-                              ))
-                                  .toList();
-
-                              downloadUrls = (await Future.wait(
-                                selectedFiles.map(
-                                      (f) async =>
-                                  await uploadData(f.storagePath, f.bytes),
-                                ),
-                              ))
-                                  .where((u) => u != null)
-                                  .map((u) => u!)
-                                  .toList();
+                              selectedUploadedFile = FFUploadedFile(
+                                name: selectedFile.storagePath.split('/').last,
+                                bytes: selectedFile.bytes,
+                              );
+                              downloadUrl = await uploadData(
+                                  selectedFile.storagePath, selectedFile.bytes);
                             } finally {
                               ScaffoldMessenger.of(context)
                                   .hideCurrentSnackBar();
                               _model.isDataUploading = false;
                             }
-                            if (selectedUploadedFiles.length ==
-                                selectedFiles.length &&
-                                downloadUrls.length == selectedFiles.length) {
+                            if (selectedUploadedFile != null &&
+                                downloadUrl != null) {
                               setState(() {
                                 _model.uploadedLocalFile =
-                                    selectedUploadedFiles.first;
-                                _model.uploadedFileUrl = downloadUrls.first;
+                                selectedUploadedFile!;
+                                _model.uploadedFileUrl = downloadUrl!;
                               });
                               showUploadMessage(
                                 context,
