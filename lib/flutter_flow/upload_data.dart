@@ -59,23 +59,23 @@ Future<List<SelectedMedia>?> selectMediaWithSourceBottomSheet({
 }) async {
   final createUploadMediaListTile =
       (String label, MediaSource mediaSource) => ListTile(
-            title: Text(
-              label,
-              textAlign: TextAlign.center,
-              style: GoogleFonts.getFont(
-                pickerFontFamily,
-                color: textColor,
-                fontWeight: FontWeight.w600,
-                fontSize: 20,
-              ),
-            ),
-            tileColor: backgroundColor,
-            dense: false,
-            onTap: () => Navigator.pop(
-              context,
-              mediaSource,
-            ),
-          );
+    title: Text(
+      label,
+      textAlign: TextAlign.center,
+      style: GoogleFonts.getFont(
+        pickerFontFamily,
+        color: textColor,
+        fontWeight: FontWeight.w600,
+        fontSize: 20,
+      ),
+    ),
+    tileColor: backgroundColor,
+    dense: false,
+    onTap: () => Navigator.pop(
+      context,
+      mediaSource,
+    ),
+  );
   final mediaSource = await showModalBottomSheet<MediaSource>(
       context: context,
       backgroundColor: backgroundColor,
@@ -178,8 +178,8 @@ Future<List<SelectedMedia>?> selectMedia({
       final path = _getStoragePath(storageFolderPath, media.name, false, index);
       final dimensions = includeDimensions
           ? isVideo
-              ? _getVideoDimensions(media.path)
-              : _getImageDimensions(mediaBytes)
+          ? _getVideoDimensions(media.path)
+          : _getImageDimensions(mediaBytes)
           : null;
 
       return SelectedMedia(
@@ -197,11 +197,11 @@ Future<List<SelectedMedia>?> selectMedia({
   final pickedMediaFuture = isVideo
       ? picker.pickVideo(source: source)
       : picker.pickImage(
-          maxWidth: maxWidth,
-          maxHeight: maxHeight,
-          imageQuality: imageQuality,
-          source: source,
-        );
+    maxWidth: maxWidth,
+    maxHeight: maxHeight,
+    imageQuality: imageQuality,
+    source: source,
+  );
   final pickedMedia = await pickedMediaFuture;
   final mediaBytes = await pickedMedia?.readAsBytes();
   if (mediaBytes == null) {
@@ -210,8 +210,8 @@ Future<List<SelectedMedia>?> selectMedia({
   final path = _getStoragePath(storageFolderPath, pickedMedia!.name, isVideo);
   final dimensions = includeDimensions
       ? isVideo
-          ? _getVideoDimensions(pickedMedia.path)
-          : _getImageDimensions(mediaBytes)
+      ? _getVideoDimensions(pickedMedia.path)
+      : _getImageDimensions(mediaBytes)
       : null;
 
   return [
@@ -271,18 +271,18 @@ Future<MediaDimensions> _getImageDimensions(Uint8List mediaBytes) async {
 
 Future<MediaDimensions> _getVideoDimensions(String path) async {
   final VideoPlayerController videoPlayerController =
-      VideoPlayerController.asset(path);
+  VideoPlayerController.asset(path);
   await videoPlayerController.initialize();
   final size = videoPlayerController.value.size;
   return MediaDimensions(width: size.width, height: size.height);
 }
 
 String _getStoragePath(
-  String? pathPrefix,
-  String filePath,
-  bool isVideo, [
-  int? index,
-]) {
+    String? pathPrefix,
+    String filePath,
+    bool isVideo, [
+      int? index,
+    ]) {
   pathPrefix ??= _firebasePathPrefix();
   pathPrefix = _removeTrailingSlash(pathPrefix);
   final timestamp = DateTime.now().microsecondsSinceEpoch;

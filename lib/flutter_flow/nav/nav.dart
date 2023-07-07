@@ -3,6 +3,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:scaffale_admin/upload_choose/upload_choose_widget.dart';
+import 'package:scaffale_admin/upload_info_book/upload_info_book_widget.dart';
+import 'package:scaffale_admin/upload_info_paper/upload_info_paper_widget.dart';
+import 'package:scaffale_admin/upload_info_project/upload_info_project_widget.dart';
 import '../flutter_flow_theme.dart';
 import '../../backend/backend.dart';
 
@@ -102,11 +106,29 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => UploadWidget(),
             ),
             FFRoute(
-              name: 'upload_info',
-              path: 'uploadInfo',
+              name: 'upload_choose',
+              path: 'uploadchoose',
               requireAuth: true,
-              builder: (context, params) => UploadInfoWidget(),
+              builder: (context, params) => UploadChooseWidget(),
             ),
+        FFRoute(
+          name: 'upload_info_book',
+          path: 'uploadInfobook',
+          requireAuth: true,
+          builder: (context, params) => UploadInfoBookWidget(),
+        ),
+        FFRoute(
+          name: 'upload_info_paper',
+          path: 'uploadInfopaper',
+          requireAuth: true,
+          builder: (context, params) => UploadInfoPaperWidget(),
+        ),
+        FFRoute(
+          name: 'upload_info_project',
+          path: 'uploadInfoproject',
+          requireAuth: true,
+          builder: (context, params) => UploadInfoProjectWidget(),
+        ),
             FFRoute(
               name: 'profile',
               path: 'profile',
@@ -139,7 +161,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               requireAuth: true,
               builder: (context, params) => DepartmentWidget(
                 departmentname:
-                    params.getParam('departmentname', ParamType.String),
+                    params.getParam('departmentname', ParamType.String), filetype: '',
               ),
             ),
             FFRoute(

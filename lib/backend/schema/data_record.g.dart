@@ -113,6 +113,48 @@ class _$DataRecordSerializer implements StructuredSerializer<DataRecord> {
             specifiedType: const FullType(
                 DocumentReference, const [const FullType.nullable(Object)])));
     }
+    value = object.publicationData;
+    if (value != null) {
+      result
+        ..add('publicationData')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(DateTime)));
+    }
+    value = object.journal;
+    if (value != null) {
+      result
+        ..add('journal')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.filetype;
+    if (value != null) {
+      result
+        ..add('filetype')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.thesisetype;
+    if (value != null) {
+      result
+        ..add('thesisetype')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.volume;
+    if (value != null) {
+      result
+        ..add('volume')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(int)));
+    }
+    value = object.publisher;
+    if (value != null) {
+      result
+        ..add('publisher')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -160,6 +202,27 @@ class _$DataRecordSerializer implements StructuredSerializer<DataRecord> {
                   specifiedType: const FullType(
                       BuiltList, const [const FullType(String)]))!
               as BuiltList<Object?>);
+          break;
+        case 'journal':
+          result.journal = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'volume':
+          result.volume = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;case 'publisher':
+        result.publisher = serializers.deserialize(value,
+            specifiedType: const FullType(String)) as String?;
+        break;case 'thesisetype':
+        result.thesisetype = serializers.deserialize(value,
+            specifiedType: const FullType(String)) as String?;
+        break;case 'filetype':
+        result.filetype = serializers.deserialize(value,
+            specifiedType: const FullType(String)) as String?;
+        break;
+        case 'publicationData':
+          result.publicationData = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime)) as DateTime?;
           break;
         case 'bookpath':
           result.bookpath = serializers.deserialize(value,
@@ -219,6 +282,21 @@ class _$DataRecord extends DataRecord {
   final String? collage;
   @override
   final DocumentReference<Object?>? ffRef;
+  @override
+  final DateTime? publicationData;
+  @override
+  final String? journal;
+  @override
+  final String? filetype;
+  @override
+  final String? thesisetype;
+  @override
+  final int? volume;
+  @override
+  final String? publisher;
+
+
+
 
   factory _$DataRecord([void Function(DataRecordBuilder)? updates]) =>
       (new DataRecordBuilder()..update(updates))._build();
@@ -236,8 +314,16 @@ class _$DataRecord extends DataRecord {
       this.department,
       this.favorite,
       this.collage,
-      this.ffRef})
+      this.ffRef,
+      this.publicationData,
+      this.journal,
+      this.filetype,
+      this.thesisetype, 
+      this.volume,
+      this.publisher,
+      })
       : super._();
+
 
   @override
   DataRecord rebuild(void Function(DataRecordBuilder) updates) =>
@@ -262,7 +348,11 @@ class _$DataRecord extends DataRecord {
         department == other.department &&
         favorite == other.favorite &&
         collage == other.collage &&
-        ffRef == other.ffRef;
+        ffRef == other.ffRef&&
+        journal == other.journal&&
+        filetype == other.filetype&&
+        thesisetype == other.thesisetype&&
+        publicationData == other.publicationData ;
   }
 
   @override
@@ -281,6 +371,10 @@ class _$DataRecord extends DataRecord {
     _$hash = $jc(_$hash, favorite.hashCode);
     _$hash = $jc(_$hash, collage.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
+    _$hash = $jc(_$hash, publicationData.hashCode);
+    _$hash = $jc(_$hash, journal.hashCode);
+    _$hash = $jc(_$hash, thesisetype.hashCode);
+    _$hash = $jc(_$hash, filetype.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -300,7 +394,11 @@ class _$DataRecord extends DataRecord {
           ..add('department', department)
           ..add('favorite', favorite)
           ..add('collage', collage)
-          ..add('ffRef', ffRef))
+          ..add('ffRef', ffRef)
+          ..add('journal', journal)
+          ..add('filetype', filetype)
+          ..add('thesisetype', thesisetype)
+          ..add('publicationData', publicationData))
         .toString();
   }
 }
@@ -310,8 +408,31 @@ class DataRecordBuilder implements Builder<DataRecord, DataRecordBuilder> {
 
   DateTime? _created;
   DateTime? get created => _$this._created;
-  set created(DateTime? created) => _$this._created = created;
 
+  DateTime? _publicationData;
+  DateTime? get publicationData => _$this._publicationData;
+  
+  String? _publisher;
+  String? get publisher => _$this._publisher;
+  set publisher(String? publisher) => _$this._publisher = publisher;
+  
+  String? _journal;
+  String? get journal => _$this._journal;
+  set journal(String? journal) => _$this._journal = journal;
+
+  int? _volume;
+  int? get volume => _$this._volume;
+  set volume(int? volume) => _$this._volume = volume;
+
+  String? _filetype;
+  String? get filetype => _$this._filetype;
+  set filetype(String? journal) => _$this._filetype = filetype;
+
+  String? _thesisetype;
+  String? get thesisetype => _$this._thesisetype;
+  set thesisetype(String? journal) => _$this._thesisetype = thesisetype;
+  
+  
   String? _description;
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
@@ -383,6 +504,12 @@ class DataRecordBuilder implements Builder<DataRecord, DataRecordBuilder> {
       _favorite = $v.favorite;
       _collage = $v.collage;
       _ffRef = $v.ffRef;
+      _journal = $v.journal;
+      _filetype = $v.filetype;
+      _thesisetype = $v.thesisetype;
+      _publicationData = $v.publicationData;
+      _publisher = $v.publisher;
+      _volume = $v.volume;
       _$v = null;
     }
     return this;
@@ -418,7 +545,13 @@ class DataRecordBuilder implements Builder<DataRecord, DataRecordBuilder> {
               bookpath: bookpath,
               department: department,
               favorite: favorite,
+              journal: journal,
+              filetype: filetype,
+              thesisetype: thesisetype,
+              publicationData: publicationData,
               collage: collage,
+              publisher: publisher,
+              volume: volume,
               ffRef: ffRef);
     } catch (_) {
       late String _$failedField;

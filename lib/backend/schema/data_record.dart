@@ -21,6 +21,18 @@ abstract class DataRecord implements Built<DataRecord, DataRecordBuilder> {
 
   String? get bookstatus;
 
+  String? get journal;
+
+  String? get thesisetype;
+
+  int? get volume;
+
+  String? get filetype;
+
+  String? get publisher;
+
+  DateTime? get publicationData;
+
   @BuiltValueField(wireName: 'Booktitle')
   String? get booktitle;
 
@@ -38,6 +50,8 @@ abstract class DataRecord implements Built<DataRecord, DataRecordBuilder> {
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
 
+
+
   static void _initializeBuilder(DataRecordBuilder builder) => builder
     ..description = ''
     ..bookcover = ''
@@ -48,7 +62,13 @@ abstract class DataRecord implements Built<DataRecord, DataRecordBuilder> {
     ..departmentfilter = ListBuilder()
     ..bookpath = ''
     ..favorite = false
-    ..collage = '';
+    ..collage = ''
+    ..journal = ''
+    ..thesisetype= ''
+    ..filetype = ''
+    ..publisher = ''
+    ..volume = '' as int?;
+
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('Data');
@@ -82,6 +102,12 @@ Map<String, dynamic> createDataRecordData({
   DocumentReference? department,
   bool? favorite,
   String? collage,
+  DateTime? publicationData,
+  String? journal,
+  String? filetype,
+  String? thesisetype,
+  String? publisher,
+  int? volume,
 }) {
   final firestoreData = serializers.toFirestore(
     DataRecord.serializer,
@@ -98,7 +124,14 @@ Map<String, dynamic> createDataRecordData({
         ..bookpath = bookpath
         ..department = department
         ..favorite = favorite
-        ..collage = collage,
+        ..collage = collage
+        ..publicationData = publicationData as DateTime?
+        ..journal = journal
+        ..filetype = filetype
+        ..thesisetype = thesisetype
+        ..publisher = publisher
+        ..volume = volume as int?,
+
     ),
   );
 
