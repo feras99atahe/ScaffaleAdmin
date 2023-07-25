@@ -68,7 +68,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           children: [
                             Container(
                               width: double.infinity,
-                              height: MediaQuery.of(context).size.height * 0.4,
+                              height: MediaQuery.of(context).size.height * 0.2,
                               decoration: BoxDecoration(
                                 color: Colors.black,
                                 borderRadius: BorderRadius.only(
@@ -231,30 +231,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       ),
                                     ),
                                   ),
-                                  Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 8.0, 8.0, 8.0),
-                                      child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'hi6frn0s' /* Collage */,
-                                        ),
-                                        textAlign: TextAlign.center,
-                                        style: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .override(
-                                              fontFamily: 'Tajawal',
-                                              color: FlutterFlowTheme.of(context)
-                                                  .primaryBtnText,
-                                              useGoogleFonts: GoogleFonts.asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(context)
-                                                          .headlineSmallFamily),
-                                            ),
-                                      ),
-                                    ),
-                                  ),
+
                                   Align(
                                     alignment: AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(

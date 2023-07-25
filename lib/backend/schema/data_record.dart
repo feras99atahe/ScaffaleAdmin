@@ -27,6 +27,8 @@ abstract class DataRecord implements Built<DataRecord, DataRecordBuilder> {
 
   int? get volume;
 
+  int? get pages;
+
   String? get filetype;
 
   String? get publisher;
@@ -40,7 +42,7 @@ abstract class DataRecord implements Built<DataRecord, DataRecordBuilder> {
 
   String? get bookpath;
 
-  DocumentReference? get department;
+  String? get department;
 
   bool? get favorite;
 
@@ -49,6 +51,7 @@ abstract class DataRecord implements Built<DataRecord, DataRecordBuilder> {
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
+
 
 
 
@@ -61,13 +64,13 @@ abstract class DataRecord implements Built<DataRecord, DataRecordBuilder> {
     ..booktitle = ''
     ..departmentfilter = ListBuilder()
     ..bookpath = ''
+    ..department = ''
     ..favorite = false
     ..collage = ''
     ..journal = ''
     ..thesisetype= ''
     ..filetype = ''
-    ..publisher = ''
-    ..volume = '' as int?;
+    ..publisher = '';
 
 
   static CollectionReference get collection =>
@@ -99,7 +102,7 @@ Map<String, dynamic> createDataRecordData({
   String? bookstatus,
   String? booktitle,
   String? bookpath,
-  DocumentReference? department,
+  String? department,
   bool? favorite,
   String? collage,
   DateTime? publicationData,
@@ -108,12 +111,13 @@ Map<String, dynamic> createDataRecordData({
   String? thesisetype,
   String? publisher,
   int? volume,
+  int? pages,
 }) {
   final firestoreData = serializers.toFirestore(
     DataRecord.serializer,
     DataRecord(
       (d) => d
-        ..created = created
+        ..created = created as DateTime?
         ..description = description
         ..bookcover = bookcover
         ..status = status
@@ -130,7 +134,8 @@ Map<String, dynamic> createDataRecordData({
         ..filetype = filetype
         ..thesisetype = thesisetype
         ..publisher = publisher
-        ..volume = volume as int?,
+        ..volume = volume as int?
+        ..pages = pages as int?,
 
     ),
   );

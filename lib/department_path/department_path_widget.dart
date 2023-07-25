@@ -8,7 +8,12 @@ import 'department_path_model.dart';
 export 'department_path_model.dart';
 
 class DepartmentPathWidget extends StatefulWidget {
-  const DepartmentPathWidget({Key? key}) : super(key: key);
+  const DepartmentPathWidget({
+    Key? key,
+    required this.departmentname,
+  }) : super(key: key);
+
+  final String? departmentname;
 
   @override
   _DepartmentPathWidgetState createState() => _DepartmentPathWidgetState();
@@ -84,6 +89,10 @@ class _DepartmentPathWidgetState extends State<DepartmentPathWidget> {
                                 queryParams: {
                                   'filetype': serializeParam(
                                     'Book',
+                                    ParamType.String,
+                                  ),
+                                  'departmentname': serializeParam(
+                                    widget.departmentname,
                                     ParamType.String,
                                   ),
                                 }.withoutNulls,

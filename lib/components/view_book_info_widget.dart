@@ -240,15 +240,41 @@ class _ViewBookInfoWidgetState extends State<ViewBookInfoWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed(
-                                'review',
-                                queryParams: {
-                                  'bookdetail': serializeParam(
-                                    containerDataRecord.reference,
-                                    ParamType.DocumentReference,
-                                  ),
-                                }.withoutNulls,
-                              );
+                              if (containerDataRecord.filetype == 'Book') {
+                                context.pushNamed(
+                                  'review_book',
+                                  queryParams: {
+                                    'bookdetail': serializeParam(
+                                      widget.bookinfo,
+                                      ParamType.DocumentReference,
+                                    ),
+                                  }.withoutNulls,
+                                );
+                              } else {
+                                if (containerDataRecord.filetype == 'Paper') {
+                                  context.pushNamed(
+                                    'review_paper',
+                                    queryParams: {
+                                      'bookdetail': serializeParam(
+                                        widget.bookinfo,
+                                        ParamType.DocumentReference,
+                                      ),
+                                    }.withoutNulls,
+                                  );
+                                } else {
+                                  if (containerDataRecord.filetype == 'Project') {
+                                    context.pushNamed(
+                                      'review_project',
+                                      queryParams: {
+                                        'bookdetail': serializeParam(
+                                          widget.bookinfo,
+                                          ParamType.DocumentReference,
+                                        ),
+                                      }.withoutNulls,
+                                    );
+                                  }
+                                }
+                              }
                             },
                             child:
                             Text('More',

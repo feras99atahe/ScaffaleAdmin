@@ -73,28 +73,85 @@ class _UploadChooseWidgetState extends State<UploadChooseWidget> {
                         shrinkWrap: true,
                         scrollDirection: Axis.vertical,
                         children: [
-                          Container(
-                            width: 100,
-                            height: 100,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed('upload_info_book');
+                            },
+                            child: Container(
+                              width: 100,
+                              height: 100,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                              ),
+                              child: Align(
+                                alignment: AlignmentDirectional(0, 0),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'l4ew3f2u' /* Book */,
+                                  ),
+                                  style:
+                                  FlutterFlowTheme.of(context).bodyMedium,
+                                ),
+                              ),
                             ),
                           ),
-                          Container(
-                            width: 100,
-                            height: 100,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed('upload_info_paper');
+                            },
+                            child: Container(
+                              width: 100,
+                              height: 100,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                              ),
+                              child: Align(
+                                alignment: AlignmentDirectional(0, 0),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    '9uau8n1i' /* paper */,
+                                  ),
+                                  style:
+                                  FlutterFlowTheme.of(context).bodyMedium,
+                                ),
+                              ),
                             ),
                           ),
-                          Container(
-                            width: 100,
-                            height: 100,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed('upload_info_project');
+                            },
+                            child: Container(
+                              width: 100,
+                              height: 100,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                              ),
+                              child: Align(
+                                alignment: AlignmentDirectional(0, 0),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    '3rh7bawh' /* project */,
+                                  ),
+                                  style:
+                                  FlutterFlowTheme.of(context).bodyMedium,
+                                ),
+                              ),
                             ),
                           ),
                           Container(

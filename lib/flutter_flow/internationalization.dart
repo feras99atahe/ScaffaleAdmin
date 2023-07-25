@@ -120,11 +120,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'wq1b4ars': {
       'en': 'Search...',
-      'ar': '[بعض نص التلميح ...]',
+      'ar': '[بحث ...]',
     },
     'zh0yco7j': {
       'en': 'Search Result',
-      'ar': '',
+      'ar': 'نتائج البحث',
     },
   },
   // Upload
@@ -138,15 +138,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'mhy4ce43': {
       'en': 'Name',
-      'ar': 'اسم',
+      'ar': 'الاسم',
     },
     '9myhuerv': {
       'en': 'Author',
-      'ar': 'مؤلف',
+      'ar': 'المؤلف',
     },
     '40on4eqg': {
       'en': 'Department',
-      'ar': 'قسم',
+      'ar': 'القسم',
     },
     '0ufenesi': {
       'en': 'Option 1',
@@ -154,15 +154,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'serxxduy': {
       'en': 'Please select...',
-      'ar': '',
+      'ar': 'رجاء اختار',
     },
     'sktz13rt': {
       'en': 'Search for an item...',
-      'ar': '',
+      'ar': 'البحث عن عنصر',
     },
     'uq69ks73': {
       'en': 'Description',
-      'ar': 'وصف',
+      'ar': 'الوصف',
     },
     'yvtkr5nj': {
       'en': 'Upload File',
@@ -174,7 +174,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'rmf88iyw': {
       'en': 'Home',
-      'ar': 'بيت',
+      'ar': 'الرئيسية',
     },
   },
   // profile
@@ -185,23 +185,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'hi6frn0s': {
       'en': 'Collage',
-      'ar': 'بريد إلكتروني',
+      'ar': 'الكلية ',
     },
     'zgby0xkr': {
       'en': 'Language',
-      'ar': 'لغة',
+      'ar': 'اللغة',
     },
     'hkd9if7i': {
       'en': 'Notification',
-      'ar': 'إشعار',
+      'ar': 'الإشعارات',
     },
     'c82tvn43': {
       'en': 'Dark Mode',
-      'ar': 'الحكمة والسياسة',
+      'ar': 'الوضع المظلم',
     },
     'a9evqiye': {
       'en': 'Pravicy & policie',
-      'ar': 'الحكمة والسياسة',
+      'ar': ' سياسة الخصوصية',
     },
     'lmtd7ptl': {
       'en': 'Log out',
@@ -216,19 +216,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '1t7hg84w': {
       'en': 'Title',
-      'ar': 'عنوان',
+      'ar': 'العنوان',
     },
     '4uiht381': {
       'en': 'Author',
-      'ar': 'مؤلف',
+      'ar': 'المؤلف',
     },
     'mz0xjvgq': {
       'en': 'Department',
-      'ar': 'قسم',
+      'ar': 'القسم',
     },
     'tgduxko2': {
       'en': 'Collage',
-      'ar': 'قسم',
+      'ar': 'الكلية',
     },
     'vq8cyc6a': {
       'en': 'Download',
@@ -236,44 +236,44 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '20kncooi': {
       'en': 'Read',
-      'ar': 'يقرأ',
+      'ar': 'قراءة',
     },
     '6fylytju': {
       'en': 'Home',
-      'ar': 'بيت',
+      'ar': 'الرئيسية',
     },
   },
   // pdf_reader
   {
     '9ela9y2t': {
       'en': 'Home',
-      'ar': 'بيت',
+      'ar': 'الرئيسية',
     },
   },
   // department
   {
     'h94vw13q': {
       'en': 'Home',
-      'ar': 'بيت',
+      'ar': 'الرئيسية',
     },
   },
   // file_check_admin
   {
     'ng24mwf4': {
       'en': 'Read',
-      'ar': 'يقرأ',
+      'ar': 'قراءة',
     },
     '38t12tp1': {
       'en': 'Description',
       'ar': 'وصف',
     },
     'xs800y5x': {
-      'en': 'Department',
-      'ar': 'قسم',
+      'en': 'Publication Data',
+      'ar': 'تاريخ النشر',
     },
     'uigsv0w0': {
       'en': 'Author',
-      'ar': 'مؤلف',
+      'ar': 'المؤلف',
     },
     't36p8jmd': {
       'en': 'Title',
@@ -297,7 +297,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ccr42d5a': {
       'en': 'Home',
-      'ar': 'بيت',
+      'ar': 'الرئيسية',
     },
   },
   // Edit_file_Admine
@@ -328,18 +328,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'yj3t7qzc': {
       'en': 'Home',
-      'ar': 'بيت',
+      'ar': 'الرئيسية',
     },
   },
   // Final_Login
   {
     'w79lmpce': {
       'en': 'Welcom To Scaffale',
-      'ar': '',
+      'ar': 'مرحبًا بك في سكافالي',
     },
     '6cp0ay72': {
       'en': 'Home',
-      'ar': '',
+      'ar': 'الرئيسية',
     },
   },
   // final_Singup
@@ -350,25 +350,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'vyskkr3r': {
       'en': 'Home',
-      'ar': '',
+      'ar': 'الرئيسية',
     },
   },
   // Scaffale
   {
     'lxtuc4in': {
       'en': 'Home',
-      'ar': '',
+      'ar': 'الرئيسية',
     },
   },
   // final_Recoerpassword
   {
     'eoq9wgcy': {
       'en': 'Reset Password',
-      'ar': '',
+      'ar': 'استعادة كلمة المرور',
     },
     'k50mxy3s': {
       'en': 'Home',
-      'ar': '',
+      'ar': 'الرئيسية',
     },
   },
   // Scaffalefile
@@ -379,32 +379,32 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '0nl85cms': {
       'en': 'Home',
-      'ar': 'بيت',
+      'ar': 'الرئيسية',
     },
   },
   // deletwidget
   {
     'i1d48tdu': {
       'en': 'Home',
-      'ar': '',
+      'ar': 'الرئيسية',
     },
   },
   // Privecy
   {
     '9eb6aq5r': {
-      'en': 'Home',
-      'ar': '',
+      'en': 'ىخ',
+      'ar': 'الرئيسية',
     },
   },
   // view_book_info
   {
     '780klqpe': {
       'en': 'Download',
-      'ar': '',
+      'ar': 'تحميل',
     },
     'ba61f7ph': {
       'en': 'More',
-      'ar': '',
+      'ar': 'المزيد',
     },
   },
   // searchfilter
@@ -457,11 +457,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'rlvczm24': {
       'en': 'Email',
-      'ar': '',
+      'ar': 'البريد الالكتروني',
     },
     't8uc8xn0': {
       'en': 'Password',
-      'ar': '',
+      'ar': ' كلمة المرور',
     },
     'kua48te5': {
       'en': 'Login',
@@ -469,15 +469,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'zeeu7xvr': {
       'en': 'Forget password?',
-      'ar': '',
+      'ar': 'هل نسيت كلمة المرور؟',
     },
     'wh0k6ac5': {
       'en': 'Create an account',
-      'ar': '',
+      'ar': 'إنشاء حساب',
     },
     '7m2famxt': {
-      'en': 'Use a social platform to continue',
-      'ar': 'استخدم منصة اجتماعية للمتابعة',
+      'en': 'Or Login with',
+      'ar': 'أو سجل عن طريق',
     },
   },
   // signup_bottomsheet
@@ -511,30 +511,30 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '4nlydscd': {
       'en': 'Enter your Email',
-      'ar': '',
+      'ar': 'اكتب بريدك الالكتروني',
     },
     '4zhuvxcw': {
       'en': 'Email',
-      'ar': '',
+      'ar': 'البريد الإلكتروني',
     },
     '5x06t9e3': {
       'en': 'Send Link',
-      'ar': '',
+      'ar': 'ارسل الرابط',
     },
   },
   // Edit_info
   {
     '7rg8wj9s': {
       'en': 'Name',
-      'ar': '',
+      'ar': ' الاسم',
     },
     '5rk73vkg': {
       'en': 'Email',
-      'ar': '',
+      'ar': 'البريد الالكتروني',
     },
     '9biplg13': {
       'en': 'Save',
-      'ar': '',
+      'ar': 'حفظ',
     },
   },
   // Miscellaneous
@@ -631,5 +631,443 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
       'ar': '',
     },
+    '045o7j94': {
+      'en': 'Approved ',
+      'ar': ' قبول',
+    },
+    'fn2bx930': {
+      'en': 'Reject  ',
+      'ar': ' رفض',
+    },
+    'zus0qf56': {
+      'en': 'Projects   ',
+      'ar': ' مشاريع',
+    },
+    'i9m9va9w': {
+      'en': 'Books',
+      'ar': ' كتب',
+    },
+    'ryat4t2f': {
+      'en': 'Papers',
+      'ar': ' أوراق بحثية',
+    },
+    '6a0alnxk': {
+      'en': 'Title',
+      'ar': ' العنوان',
+    },
+    'k8inalu2': {
+      'en': 'Authors',
+      'ar': ' المؤلف',
+    },
+    '7m4w0leu': {
+      'en': 'Publication date',
+      'ar': ' تاريخ النشر',
+    },
+    '1f5sde4e': {
+      'en': 'Pages ',
+      'ar': ' الأوراق',
+    },
+    '8pluh12z': {
+      'en': 'Publisher',
+      'ar': ' الناشر',
+    },
+    'odhituo2': {
+      'en': 'Volume ',
+      'ar': ' العدد',
+    },
+    '7pf9au2q': {
+      'en': 'Department',
+      'ar': ' القسم',
+    },
+    'epmnub3o': {
+      'en': 'Append',
+      'ar': 'قبول',
+    },
+    'j9autzn2': {
+      'en': 'Title',
+      'ar': ' العنوان',
+    },
+    '7jmgco7f': {
+      'en': 'Authors',
+      'ar': ' المؤلف',
+    },
+    '79dg78sx': {
+      'en': 'Publication date',
+      'ar': ' تاريخ النشر',
+    },
+    '2rahq2fc': {
+      'en': 'Journal',
+      'ar': ' المجلة',
+    },
+    'w83x2i90': {
+      'en': 'Pages',
+      'ar': ' الأوراق',
+    },
+    '7k2r9ti0': {
+      'en': 'Publisher',
+      'ar': ' الناشر',
+    },
+    'wycphekx': {
+      'en': 'Volume',
+      'ar': ' العدد',
+    },
+    'sk0igf7a': {
+      'en': 'Department',
+      'ar': ' القسم',
+    },
+    '7gbltvse': {
+      'en': 'Append',
+      'ar': ' قبول',
+    },
+    'kkccbky8': {
+      'en': 'Title',
+      'ar': ' العنوان',
+    },
+    'iryfrw2e': {
+      'en': 'Authors',
+      'ar': ' المؤلفون',
+    },
+    '89jtm08r': {
+      'en': 'Publication date',
+      'ar': ' تاريخ النشر',
+    },
+    'dvatfg0c': {
+      'en': 'Pages',
+      'ar': ' الأوراق',
+    },
+    't3sqy00q': {
+      'en': 'Thesis',
+      'ar': ' الرسالة العلمية',
+    },
+    '5vxhyykx': {
+      'en': 'BSC',
+      'ar': ' بكالوريس',
+    },
+    'rpeh1stq': {
+      'en': 'MSc',
+      'ar': ' ماجستير',
+    },
+    '5dj5twu1': {
+      'en': 'PHD',
+      'ar': ' دكتوراة',
+    },
+    'md3tlsak': {
+      'en': 'Department',
+      'ar': ' القسم',
+    },
+    '8s93w3wt': {
+      'en': 'Append',
+      'ar': ' قبول',
+    },
+    'a1jzijvi': {
+      'en': 'Pages',
+      'ar': ' الأوراق',
+    },
+    'offkyx3f': {
+      'en': 'Publisher',
+      'ar': ' الناشر',
+    },
+    'sg8tbbez': {
+      'en': 'Volume',
+      'ar': 'العدد',
+    },
+    'lbecf24u': {
+      'en': 'Department',
+      'ar': 'القسم',
+    },
+    'q3ztwn2f': {
+      'en': 'Next',
+      'ar': 'التالي',
+    },
+    '7s3l28np': {
+      'en': 'Edit',
+      'ar': 'تعديل',
+    },
+    'bleh1rse': {
+      'en': 'Approved',
+      'ar': 'مقبول',
+    },
+    'bin5q4cs': {
+      'en': 'Reject',
+      'ar': 'رفض',
+    },
+    '3lpgjbin': {
+      'en': 'Read',
+      'ar': 'قراءة',
+    },
+    'v5aig0lz': {
+      'en': 'Title',
+      'ar': 'العنوان',
+    },
+    'hvbmaksq': {
+      'en': 'Author',
+      'ar': 'المؤلف',
+    },
+    'l54a9yfx': {
+      'en': 'Publication Data',
+      'ar': 'تاريخ النشر',
+    },
+    'n82kcyqc': {
+      'en': 'Journal',
+      'ar': 'المجلة',
+    },
+    '9cmjaht7': {
+      'en': 'Pages',
+      'ar': 'الأوراق',
+    },
+    'bihjjc4u': {
+      'en': 'Publisher',
+      'ar': 'الناشر',
+    },
+    'd43270t3': {
+      'en': 'Volume',
+      'ar': 'العدد',
+    },
+    'l172mxev': {
+      'en': 'Department',
+      'ar': 'القسم',
+    },
+    '3izqhegk': {
+      'en': 'Next',
+      'ar': 'التالي',
+    },
+    'ep3emytv': {
+      'en': 'Edit',
+      'ar': 'تعديل',
+    },
+    '3z5mj4sz': {
+      'en': 'Approved',
+      'ar': 'مقبول',
+    },
+    '1fr6wrv2': {
+      'en': 'Reject',
+      'ar': 'رفض',
+    },
+    'zj0bodv9': {
+      'en': 'Read',
+      'ar': 'قراءة',
+    },
+    'wbkbr17n': {
+      'en': 'Title',
+      'ar': 'العنوان',
+    },
+    'hjlmondb': {
+      'en': 'Author',
+      'ar': 'المؤلف',
+    },
+    'd69m174c': {
+      'en': 'Publication Data',
+      'ar': 'تاريخ النشر',
+    },
+    '6du2l4az': {
+      'en': 'Thesis',
+      'ar': ' الرسالة العلمية',
+    },
+    'corqnqrp': {
+      'en': 'Pages',
+      'ar': 'الأوراق',
+    },
+    'y5wv6276': {
+      'en': 'Department',
+      'ar': 'القسم',
+    },
+    'bowhy4g3': {
+      'en': 'Next',
+      'ar': 'التالي',
+    },
+    'posxmk8e': {
+      'en': 'Edit',
+      'ar': 'تعديل',
+    },
+    'c2eiglxa': {
+      'en': 'Approved',
+      'ar': 'مقبول',
+    },
+    'w3v57v65': {
+      'en': 'Reject',
+      'ar': 'رفض',
+    },
+    'kwtzw5aj': {
+      'en': 'Upload Request',
+      'ar': 'رفع الطلب',
+    },
+    'ei0d8h9h': {
+      'en': 'Recently Added',
+      'ar': 'أضيف حديثا',
+    },
+    'kmtmz81x': {
+      'en': 'Department',
+      'ar': 'القسم',
+    },
+    'xl6xlw67': {
+      'en': 'Books',
+      'ar': 'كتب',
+    },
+    'asebmfc1': {
+      'en': 'Papers',
+      'ar': 'أوراق بحثية',
+    },
+    'qr5rwgyq': {
+      'en': 'Thesis',
+      'ar': 'رسائل علمية',
+    },
+    'l4ew3f2u': {
+      'en': 'Book',
+      'ar': 'كتاب',
+    },
+    '9uau8n1i': {
+      'en': 'paper',
+      'ar': 'ورقة بحثية',
+    },
+    '3rh7bawh': {
+      'en': 'Thesis',
+      'ar': 'رسالة علمية',
+    },
+    'taepfbel': {
+      'en': 'Title',
+      'ar': ' العنوان',
+    },
+    'c4zls8cj': {
+      'en': 'Authors',
+      'ar': ' المؤلف',
+    },
+    'upiw8yh2': {
+      'en': 'Publication date',
+      'ar': ' تاريخ النشر',
+    },
+    '3ekdafe5': {
+      'en': ' Select the Date ',
+      'ar': ' اختر تاريخ النشر',
+    },
+    'gbl4bu68': {
+      'en': 'Pages ',
+      'ar': ' الأوراق',
+    },
+    'tfedwezq': {
+      'en': 'Publisher',
+      'ar': ' الناشر',
+    },
+    '0gzx837g': {
+      'en': 'Volume ',
+      'ar': ' العدد',
+    },
+    'zzsif9qy': {
+      'en': 'Department',
+      'ar': ' القسم',
+    },
+    'a44qtl0q': {
+      'en': 'Please select...',
+      'ar': 'من فضلك اختر....',
+    },
+    '5qm21dm8': {
+      'en': 'Upload File',
+      'ar': 'رفع ملف',
+    },
+    '6l7rmotl': {
+      'en': 'Upload',
+      'ar': 'رفع',
+    },
+    'vro7mn6v': {
+      'en': 'Title',
+      'ar': ' العنوان',
+    },
+    '1pqbt49n': {
+      'en': 'Authors',
+      'ar': ' المؤلف',
+    },
+    'sz0zhmp6': {
+      'en': 'Publication date',
+      'ar': ' تاريخ النشر',
+    },
+    'p3x1lymb': {
+      'en': ' Select the Date ',
+      'ar': ' اختر تاريخ النشر',
+    },
+    'slehosdx': {
+      'en': 'Journal',
+      'ar': ' المجلة',
+    },
+    'ja5fo1b2': {
+      'en': 'Pages',
+      'ar': ' الأوراق',
+    },
+    '7rvw3j0h': {
+      'en': 'Publisher',
+      'ar': ' الناشر',
+    },
+    'nea7vmqf': {
+      'en': 'Volume',
+      'ar': ' العدد',
+    },
+    '1j5eip5n': {
+      'en': 'Department',
+      'ar': ' القسم',
+    },
+    'fwxn6zrq': {
+      'en': 'Please select...',
+      'ar': 'من فضلك اختر....',
+    },
+    'tzdu0ilx': {
+      'en': 'Upload File',
+      'ar': 'رفع ملف',
+    },
+    'te75x7s8': {
+      'en': 'Upload',
+      'ar': 'رفع',
+    },
+
+    'l9qsiudz': {
+      'en': 'Title',
+      'ar': ' العنوان',
+    },
+    'uhph41fl': {
+      'en': 'Authors',
+      'ar': ' المؤلفون',
+    },
+    '0mllwez3': {
+      'en': 'Publication date',
+      'ar': ' تاريخ النشر',
+    },
+    'c0r8rwe1': {
+      'en': ' Select the Date ',
+      'ar': ' اختر تاريخ النشر',
+    },
+    '1xrzk0mm': {
+      'en': 'Pages',
+      'ar': ' الأوراق',
+    },
+    'sdph5214': {
+      'en': 'Thesis',
+      'ar': ' الرسالة العلمية',
+    },
+    'z3us6nvl': {
+      'en': 'BSC',
+      'ar': ' بكالوريس',
+    },
+    '6rhwy7k1': {
+      'en': 'MSc',
+      'ar': ' ماجستير',
+    },
+    'bcbcprrm': {
+      'en': 'PHD',
+      'ar': ' دكتوراة',
+    },
+    '7vlgkbvm': {
+      'en': 'Department',
+      'ar': ' القسم',
+    },
+    'nyxphru7': {
+      'en': 'Please select...',
+      'ar': 'من فضلك اختر....',
+    },
+    '95imld7a': {
+      'en': 'Upload File',
+      'ar': 'رفع ملف',
+    },
+    '1ej1xn3n': {
+      'en': 'Upload',
+      'ar': 'رفع',
+    },
+
   },
 ].reduce((a, b) => a..addAll(b));

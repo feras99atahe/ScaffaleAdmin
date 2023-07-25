@@ -53,7 +53,7 @@ class _UploadWidgetState extends State<UploadWidget> {
                       EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      context.pushNamed('upload_info');
+                      context.pushNamed('upload_choose');
                     },
                     text: FFLocalizations.of(context).getText(
                       '17950i8f' /* Upload File */,

@@ -482,6 +482,7 @@ class _UploadInfoPaperWidgetState extends State<UploadInfoPaperWidget> {
                           ),
                           textAlign: TextAlign.justify,
                           maxLines: null,
+                          keyboardType: TextInputType.number,
                           validator: _model.pagesControllerValidator
                               .asValidator(context),
                         ),
@@ -642,6 +643,7 @@ class _UploadInfoPaperWidgetState extends State<UploadInfoPaperWidget> {
                           ),
                           textAlign: TextAlign.justify,
                           maxLines: null,
+                          keyboardType: TextInputType.number,
                           validator: _model.volumeControllerValidator
                               .asValidator(context),
                         ),
@@ -678,7 +680,9 @@ class _UploadInfoPaperWidgetState extends State<UploadInfoPaperWidget> {
                               width: 50,
                               height: 50,
                               child: CircularProgressIndicator(
-                                color: FlutterFlowTheme.of(context).primary,
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  FlutterFlowTheme.of(context).primary,
+                                ),
                               ),
                             ),
                           );
@@ -726,7 +730,7 @@ class _UploadInfoPaperWidgetState extends State<UploadInfoPaperWidget> {
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(16, 8, 16, 8),
                       child: FFButtonWidget(
-                        onPressed: () async {
+                        onPressed: ()  async {
                           final selectedFile = await selectFile();
                           if (selectedFile != null) {
                             setState(() => _model.isDataUploading = true);
@@ -813,7 +817,9 @@ class _UploadInfoPaperWidgetState extends State<UploadInfoPaperWidget> {
                                 width: 50,
                                 height: 50,
                                 child: CircularProgressIndicator(
-                                  color: FlutterFlowTheme.of(context).primary,
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                    FlutterFlowTheme.of(context).primary,
+                                  ),
                                 ),
                               ),
                             );
@@ -830,24 +836,25 @@ class _UploadInfoPaperWidgetState extends State<UploadInfoPaperWidget> {
                               : null;
                           return FFButtonWidget(
                             onPressed: () async {
-                              await DataRecord.collection
-                                  .doc()
-                                  .set(createDataRecordData(
-                                author: _model.authorController.text,
-                                created: getCurrentTimestamp,
-                                bookstatus: 'pending',
-                                booktitle: _model.titleController.text,
-                                bookpath: _model.uploadedFileUrl,
-                                department:
-                                buttonDepramentRecord!.reference,
-                                publicationData: _model.datePicked,
-                                volume: int.tryParse(
-                                    _model.volumeController.text),
-                                publisher: _model.publisherController.text,
-                                journal: _model.journalController.text,
-                                filetype: 'paper',
-                              ));
-
+                              if (valueOrDefault<bool>(currentUserDocument?.isAdmin, false) ==
+                              true) {
+                                await DataRecord.collection
+                                    .doc()
+                                    .set(createDataRecordData(
+                                  author: _model.authorController.text,
+                                  created: getCurrentTimestamp,
+                                  bookstatus: 'approved',
+                                  booktitle: _model.titleController.text,
+                                  bookpath: _model.uploadedFileUrl,
+                                  publicationData: _model.datePicked,
+                                  volume: int.tryParse(
+                                      _model.volumeController.text),
+                                  publisher: _model.publisherController.text,
+                                  journal: _model.journalController.text,
+                                  filetype: 'paper',
+                                  department: _model.dropDownValue,
+                                ));
+                              }
                               context.pushNamed('Upload');
 
                               ScaffoldMessenger.of(context).showSnackBar(

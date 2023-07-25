@@ -12,6 +12,8 @@ class FFAppState extends ChangeNotifier {
 
   FFAppState._internal();
 
+  set scaffalefiled(bool scaffalefiled) {}
+
   Future initializePersistedState() async {}
 
   void update(VoidCallback callback) {

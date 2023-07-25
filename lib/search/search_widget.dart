@@ -81,10 +81,23 @@ class _SearchWidgetState extends State<SearchWidget> {
               },
               backgroundColor: FlutterFlowTheme.of(context).primaryText,
               elevation: 8.0,
-              child: Icon(
-                Icons.add_circle_outline_rounded,
-                color: FlutterFlowTheme.of(context).primaryBtnText,
-                size: 35.0,
+              child: Container(
+                width: 60,
+                height: 60,
+                child: Icon(
+                  Icons.add_circle_outline_rounded,
+                  color: Colors.white,
+                  size: 35.0,
+                ),
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: LinearGradient(
+                    colors: [Color(0xFF00FE0D), Color(0xFF00D1FD)],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    //transform: GradientRotation(60),
+                  ),
+                ),
               ),
             ),
             body: SafeArea(

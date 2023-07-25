@@ -7,6 +7,9 @@ import 'package:scaffale_admin/upload_choose/upload_choose_widget.dart';
 import 'package:scaffale_admin/upload_info_book/upload_info_book_widget.dart';
 import 'package:scaffale_admin/upload_info_paper/upload_info_paper_widget.dart';
 import 'package:scaffale_admin/upload_info_project/upload_info_project_widget.dart';
+import '../../review_book/review_book_widget.dart';
+import '../../review_paper/review_paper_widget.dart';
+import '../../review_project/review_project_widget.dart';
 import '../flutter_flow_theme.dart';
 import '../../backend/backend.dart';
 
@@ -138,14 +141,32 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   : ProfileWidget(),
             ),
             FFRoute(
-              name: 'review',
-              path: 'review',
+              name: 'review_book',
+              path: 'reviewBook',
               requireAuth: true,
-              builder: (context, params) => ReviewWidget(
+              builder: (context, params) => ReviewBookWidget(
                 bookdetail: params.getParam(
                     'bookdetail', ParamType.DocumentReference, false, ['Data']),
               ),
             ),
+        FFRoute(
+          name: 'review_paper',
+          path: 'reviewPaper',
+          requireAuth: true,
+          builder: (context, params) => ReviewPaperWidget(
+            bookdetail: params.getParam(
+                'bookdetail', ParamType.DocumentReference, false, ['Data']),
+          ),
+        ),
+        FFRoute(
+          name: 'review_project',
+          path: 'reviewProject',
+          requireAuth: true,
+          builder: (context, params) => ReviewProjectWidget(
+            bookdetail: params.getParam(
+                'bookdetail', ParamType.DocumentReference, false, ['Data']),
+          ),
+        ),
             FFRoute(
               name: 'pdf_reader',
               path: 'pdfReader',
@@ -164,24 +185,54 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     params.getParam('departmentname', ParamType.String), filetype: '',
               ),
             ),
+        FFRoute(
+          name: 'department_choose',
+          path: 'departmentChoose',
+          requireAuth: true,
+          builder: (context, params) => DepartmentChooseWidget(
+            departmentname:
+            params.getParam('departmentname', ParamType.String),
+          ),
+        ),
+
+        FFRoute(
+          name: 'department_path',
+          path: 'departmentPath',
+          requireAuth: true,
+          builder: (context, params) => DepartmentPathWidget(
+            departmentname:
+            params.getParam('departmentname', ParamType.String),
+          ),
+        ),
             FFRoute(
-              name: 'file_check_admin',
-              path: 'fileCheckAdmin',
+              name: 'file_check_admin_book',
+              path: 'fileCheckAdminBook',
               requireAuth: true,
-              builder: (context, params) => FileCheckAdminWidget(
+              builder: (context, params) => FileCheckAdminBookWidget(
                 bookcheck: params.getParam(
                     'bookcheck', ParamType.DocumentReference, false, ['Data']),
               ),
             ),
-            FFRoute(
-              name: 'Edit_file_Admine',
-              path: 'editFileAdmine',
-              requireAuth: true,
-              builder: (context, params) => EditFileAdmineWidget(
-                bookinfo: params.getParam(
-                    'bookinfo', ParamType.DocumentReference, false, ['Data']),
-              ),
-            ),
+        FFRoute(
+          name: 'file_check_admin_paper',
+          path: 'fileCheckAdminPaper',
+          requireAuth: true,
+          builder: (context, params) => FileCheckAdminPaperWidget(
+            bookcheck: params.getParam(
+                'bookcheck', ParamType.DocumentReference, false, ['Data']),
+          ),
+        ),
+        FFRoute(
+          name: 'file_check_admin_project',
+          path: 'fileCheckAdminProject',
+          requireAuth: true,
+          builder: (context, params) => FileCheckAdminProjectWidget(
+            bookcheck: params.getParam(
+                'bookcheck', ParamType.DocumentReference, false, ['Data']),
+          ),
+        ),
+
+
             FFRoute(
               name: 'Final_Login',
               path: 'finalLogin',
@@ -215,6 +266,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     params.getParam('departmentname', ParamType.String),
               ),
             ),
+        FFRoute(
+          name: 'Scaffale_select_path',
+          path: 'scaffaleSelectPath',
+          requireAuth: true,
+          builder: (context, params) => ScaffaleSelectPathWidget(
+
+          ),
+        ),
             FFRoute(
               name: 'deletwidget',
               path: 'deletwidget',

@@ -256,7 +256,7 @@ void listenFCM() async {
     RemoteNotification? notification = message.notification;
     AndroidNotification? android = message.notification?.android;
     if (notification != null && android != null && !kIsWeb) {
-      log('70da: this is NOTIFICATION BITCH.....');
+      log('feras: this is NOTIFICATION .....');
     }
   });
 }

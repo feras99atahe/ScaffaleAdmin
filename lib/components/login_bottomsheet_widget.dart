@@ -267,7 +267,7 @@ class _LoginBottomsheetWidgetState extends State<LoginBottomsheetWidget>
                           }
 
                           context.pushNamedAuth('HomePage', mounted);
-                          dispose();
+                          Navigator.pop(context);
                         },
                         child: Container(
                           width: 350,

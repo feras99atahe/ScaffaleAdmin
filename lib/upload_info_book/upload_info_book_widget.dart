@@ -401,6 +401,7 @@ class _UploadInfoBookWidgetState extends State<UploadInfoBookWidget> {
                           ),
                           textAlign: TextAlign.justify,
                           maxLines: null,
+                          keyboardType: TextInputType.number,
                           validator: _model.pagesControllerValidator
                               .asValidator(context),
                         ),
@@ -561,6 +562,7 @@ class _UploadInfoBookWidgetState extends State<UploadInfoBookWidget> {
                           ),
                           textAlign: TextAlign.justify,
                           maxLines: null,
+                          keyboardType: TextInputType.number,
                           validator: _model.volumeControllerValidator
                               .asValidator(context),
                         ),
@@ -597,7 +599,9 @@ class _UploadInfoBookWidgetState extends State<UploadInfoBookWidget> {
                               width: 50,
                               height: 50,
                               child: CircularProgressIndicator(
-                                color: FlutterFlowTheme.of(context).primary,
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  FlutterFlowTheme.of(context).primary,
+                                ),
                               ),
                             ),
                           );
@@ -645,7 +649,7 @@ class _UploadInfoBookWidgetState extends State<UploadInfoBookWidget> {
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(16, 8, 16, 8),
                       child: FFButtonWidget(
-                        onPressed: () async {
+                        onPressed: ()  async {
                           final selectedFile = await selectFile();
                           if (selectedFile != null) {
                             setState(() => _model.isDataUploading = true);
@@ -732,7 +736,9 @@ class _UploadInfoBookWidgetState extends State<UploadInfoBookWidget> {
                                 width: 50,
                                 height: 50,
                                 child: CircularProgressIndicator(
-                                  color: FlutterFlowTheme.of(context).primary,
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                    FlutterFlowTheme.of(context).primary,
+                                  ),
                                 ),
                               ),
                             );
@@ -748,23 +754,22 @@ class _UploadInfoBookWidgetState extends State<UploadInfoBookWidget> {
                               ? buttonDepramentRecordList.first
                               : null;
                           return FFButtonWidget(
-                            onPressed: () async {
-                              await DataRecord.collection
-                                  .doc()
-                                  .set(createDataRecordData(
+                            onPressed: () async {  if (valueOrDefault<bool>(currentUserDocument?.isAdmin, false) ==
+                                true) {
+                              await DataRecord.collection.doc().set(createDataRecordData(
                                 author: _model.authorController.text,
                                 created: getCurrentTimestamp,
-                                bookstatus: 'pending',
+                                bookstatus: 'approved',
                                 booktitle: _model.bookNameController.text,
                                 bookpath: _model.uploadedFileUrl,
-                                department:
-                                buttonDepramentRecord!.reference,
+                                department: _model.dropDownValue,
                                 publicationData: _model.datePicked,
-                                volume: int.tryParse(
-                                    _model.volumeController.text),
+                                volume: int.tryParse(_model.volumeController.text),
                                 publisher: _model.publisherController.text,
                                 filetype: 'Book',
+                                pages: int.tryParse(_model.pagesController.text),
                               ));
+                            }
 
                               context.pushNamed('Upload');
 

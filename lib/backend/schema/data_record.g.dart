@@ -88,9 +88,9 @@ class _$DataRecordSerializer implements StructuredSerializer<DataRecord> {
       result
         ..add('department')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                DocumentReference, const [const FullType.nullable(Object)])));
+            specifiedType: const FullType(String)));
     }
+
     value = object.favorite;
     if (value != null) {
       result
@@ -145,6 +145,13 @@ class _$DataRecordSerializer implements StructuredSerializer<DataRecord> {
     if (value != null) {
       result
         ..add('volume')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(int)));
+    }
+    value = object.pages;
+    if (value != null) {
+      result
+        ..add('pages')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(int)));
     }
@@ -210,7 +217,12 @@ class _$DataRecordSerializer implements StructuredSerializer<DataRecord> {
         case 'volume':
           result.volume = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
-          break;case 'publisher':
+          break;
+        case 'pages':
+          result.pages = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+          case 'publisher':
         result.publisher = serializers.deserialize(value,
             specifiedType: const FullType(String)) as String?;
         break;case 'thesisetype':
@@ -230,9 +242,7 @@ class _$DataRecordSerializer implements StructuredSerializer<DataRecord> {
           break;
         case 'department':
           result.department = serializers.deserialize(value,
-              specifiedType: const FullType(DocumentReference, const [
-                const FullType.nullable(Object)
-              ])) as DocumentReference<Object?>?;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'favorite':
           result.favorite = serializers.deserialize(value,
@@ -275,7 +285,7 @@ class _$DataRecord extends DataRecord {
   @override
   final String? bookpath;
   @override
-  final DocumentReference<Object?>? department;
+  final String? department;
   @override
   final bool? favorite;
   @override
@@ -292,6 +302,8 @@ class _$DataRecord extends DataRecord {
   final String? thesisetype;
   @override
   final int? volume;
+  @override
+  final int? pages;
   @override
   final String? publisher;
 
@@ -321,6 +333,7 @@ class _$DataRecord extends DataRecord {
       this.thesisetype, 
       this.volume,
       this.publisher,
+      this.pages,
       })
       : super._();
 
@@ -352,7 +365,9 @@ class _$DataRecord extends DataRecord {
         journal == other.journal&&
         filetype == other.filetype&&
         thesisetype == other.thesisetype&&
-        publicationData == other.publicationData ;
+        pages == other.pages&&
+        volume == other.volume&&
+        publicationData == other.publicationData;
   }
 
   @override
@@ -375,6 +390,8 @@ class _$DataRecord extends DataRecord {
     _$hash = $jc(_$hash, journal.hashCode);
     _$hash = $jc(_$hash, thesisetype.hashCode);
     _$hash = $jc(_$hash, filetype.hashCode);
+    _$hash = $jc(_$hash, pages.hashCode);
+    _$hash = $jc(_$hash, volume.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -396,6 +413,8 @@ class _$DataRecord extends DataRecord {
           ..add('collage', collage)
           ..add('ffRef', ffRef)
           ..add('journal', journal)
+          ..add('volume', volume)
+          ..add('pages', pages)
           ..add('filetype', filetype)
           ..add('thesisetype', thesisetype)
           ..add('publicationData', publicationData))
@@ -406,10 +425,15 @@ class _$DataRecord extends DataRecord {
 class DataRecordBuilder implements Builder<DataRecord, DataRecordBuilder> {
   _$DataRecord? _$v;
 
+
   DateTime? _created;
   DateTime? get created => _$this._created;
   set created(DateTime? created) => _$this._created = created;
 
+
+  int? _pages;
+  int? get pages => _$this._pages;
+  set pages(int? pages) => _$this._pages = pages;
 
   DateTime? _publicationData;
   DateTime? get publicationData => _$this._publicationData;
@@ -470,10 +494,9 @@ class DataRecordBuilder implements Builder<DataRecord, DataRecordBuilder> {
   String? get bookpath => _$this._bookpath;
   set bookpath(String? bookpath) => _$this._bookpath = bookpath;
 
-  DocumentReference<Object?>? _department;
-  DocumentReference<Object?>? get department => _$this._department;
-  set department(DocumentReference<Object?>? department) =>
-      _$this._department = department;
+  String? _department;
+  String? get department => _$this._department;
+  set department(String? department) => _$this._department = department;
 
   bool? _favorite;
   bool? get favorite => _$this._favorite;
@@ -513,6 +536,7 @@ class DataRecordBuilder implements Builder<DataRecord, DataRecordBuilder> {
       _publicationData = $v.publicationData;
       _publisher = $v.publisher;
       _volume = $v.volume;
+      _pages = $v.pages;
       _$v = null;
     }
     return this;
@@ -555,6 +579,7 @@ class DataRecordBuilder implements Builder<DataRecord, DataRecordBuilder> {
               collage: collage,
               publisher: publisher,
               volume: volume,
+              pages: pages,
               ffRef: ffRef);
     } catch (_) {
       late String _$failedField;

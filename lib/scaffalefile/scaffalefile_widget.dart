@@ -140,12 +140,7 @@ class _ScaffalefileWidgetState extends State<ScaffalefileWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           ClipRRect(
-                                            borderRadius: BorderRadius.only(
-                                              bottomLeft: Radius.circular(8),
-                                              bottomRight: Radius.circular(0),
-                                              topLeft: Radius.circular(8),
-                                              topRight: Radius.circular(0),
-                                            ),
+                                            borderRadius: BorderRadius.circular(10),
                                             child: Image.network(
                                               containerDataRecord.bookcover!,
                                               width: 100,

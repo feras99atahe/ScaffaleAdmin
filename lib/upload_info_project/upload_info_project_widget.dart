@@ -401,6 +401,7 @@ class _UploadInfoProjectWidgetState extends State<UploadInfoProjectWidget> {
                           ),
                           textAlign: TextAlign.justify,
                           maxLines: null,
+                          keyboardType: TextInputType.number,
                           validator: _model.bookNameController2Validator
                               .asValidator(context),
                         ),
@@ -493,7 +494,9 @@ class _UploadInfoProjectWidgetState extends State<UploadInfoProjectWidget> {
                               width: 50,
                               height: 50,
                               child: CircularProgressIndicator(
-                                color: FlutterFlowTheme.of(context).primary,
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  FlutterFlowTheme.of(context).primary,
+                                ),
                               ),
                             ),
                           );
@@ -628,7 +631,9 @@ class _UploadInfoProjectWidgetState extends State<UploadInfoProjectWidget> {
                                 width: 50,
                                 height: 50,
                                 child: CircularProgressIndicator(
-                                  color: FlutterFlowTheme.of(context).primary,
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                    FlutterFlowTheme.of(context).primary,
+                                  ),
                                 ),
                               ),
                             );
@@ -645,21 +650,22 @@ class _UploadInfoProjectWidgetState extends State<UploadInfoProjectWidget> {
                               : null;
                           return FFButtonWidget(
                             onPressed: () async {
-                              await DataRecord.collection
-                                  .doc()
-                                  .set(createDataRecordData(
-                                author: _model.authorController.text,
-                                created: getCurrentTimestamp,
-                                bookstatus: 'pending',
-                                booktitle: _model.bookNameController1.text,
-                                bookpath: _model.uploadedFileUrl,
-                                department:
-                                buttonDepramentRecord!.reference,
-                                publicationData: _model.datePicked,
-                                thesisetype: _model.radioButtonValue,
-                                filetype: 'Project',
-                              ));
-
+                              if (valueOrDefault<bool>(currentUserDocument?.isAdmin, false) ==
+                              true) {
+                                await DataRecord.collection
+                                    .doc()
+                                    .set(createDataRecordData(
+                                  author: _model.authorController.text,
+                                  created: getCurrentTimestamp,
+                                  bookstatus: 'approved',
+                                  booktitle: _model.bookNameController1.text,
+                                  bookpath: _model.uploadedFileUrl,
+                                  publicationData: _model.datePicked,
+                                  thesisetype: _model.radioButtonValue,
+                                  filetype: 'Project',
+                                  department: _model.dropDownValue,
+                                ));
+                              }
                               context.pushNamed('Upload');
 
                               ScaffoldMessenger.of(context).showSnackBar(
